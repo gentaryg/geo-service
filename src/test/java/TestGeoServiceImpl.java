@@ -12,7 +12,7 @@ public class TestGeoServiceImpl {
     @ParameterizedTest
     @ValueSource(strings = {"172.0.32.11", "172.10.10.10", "172.12.34.56"})
     public void testByIpFromRussia(String ip) {
-        GeoService geo =  new GeoServiceImpl();
+        GeoService geo = new GeoServiceImpl();
         Country expected = Country.RUSSIA;
         //act
         Country result = geo.byIp(ip).getCountry();
@@ -24,7 +24,7 @@ public class TestGeoServiceImpl {
     @ParameterizedTest
     @ValueSource(strings = {"96.123.12.19", "96.10.10.10", "96.12.34.56"})
     public void testByIpFromUSA(String ip) {
-        GeoService geo =  new GeoServiceImpl();
+        GeoService geo = new GeoServiceImpl();
         Country expected = Country.USA;
         //act
         Country result = geo.byIp(ip).getCountry();
@@ -34,7 +34,7 @@ public class TestGeoServiceImpl {
 
     @Test
     public void testByIpFromLocalhost() {
-        GeoService geo =  new GeoServiceImpl();
+        GeoService geo = new GeoServiceImpl();
         Country expected = null;
         //act
         Country result = geo.byIp("127.0.0.1").getCountry();
